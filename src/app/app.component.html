@@ -1,4 +1,50 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+<div class="navbar">
+  <div class="navbar-brand">
+    <div><label>Candidates</label></div>
+  </div>
+</div>
+<div>
+  <div *ngFor="let selectgender of gender">
+    <input
+      type="checkbox"
+      [value]="selectgender.id"
+      (change)="ongenederchnage()"
+    />\
+  </div>
+</div>
+<div>
+  <th *ngFor="let column of headers">{{ column }}</th>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of headers">{{}row[column]}</td>
+  </tr>
+</div>
+<div>
+  <label>Add new Candidate</label>
+  <div>
+    <form>
+      <th>
+        <tr>
+          <input type="text" placeholder="First Name" />
+        </tr>
+        <tr>
+          <input type="text" placeholder="Last Name" />
+        </tr>
+      </th>
+      <th>
+        <tr>
+          <input type="text" placeholder="Email" />
+        </tr>
+      </th>
+      <th>
+        <tr>
+          <input type="button" />Female
+        </tr>
+        <tr>
+          <input type="button" />Male
+        </tr>
+      </th>
+    </form>
+  </div>
+</div>
