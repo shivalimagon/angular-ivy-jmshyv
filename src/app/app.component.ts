@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -39,10 +40,15 @@ export class AppComponent {
       first_name: 'Willard',
       last_name: 'Valek',
       email: 'wvalek3@vk.com',
-      gender: 'Male',
+      gender: 'Male',s
     },
   ];
 
-  constructor() {}
+  constructor(private formBuilder :FormBuilder) {}
   ongenederchnage(e) {}
+  onSubmit(data){
+    var firstname=data['firstname'];
+    var lastname=data['lastname'];
+    var mail=data['email'];
+  }
 }
